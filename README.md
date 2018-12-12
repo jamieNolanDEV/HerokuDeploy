@@ -1,1 +1,1 @@
-# HerokuDeploy
+Simple news Api
