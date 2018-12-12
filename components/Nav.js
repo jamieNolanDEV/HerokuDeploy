@@ -8,21 +8,28 @@ const Nav = () => (
    <div>
        <nav>
            <ul>
-            <li><Link href="/index"><a>Home</a></Link></li>
-            <li><Link href="/news"><a>News</a></Link></li>
+            <li><Link href="/news"><a>Top Stories</a></Link></li>
             <li><Link href="/business"><a>Business</a></Link></li>
             <li><Link href="/sport"><a>Sport</a></Link></li>
             <li><Link href="/weather"><a>Weather</a></Link></li>
+
            </ul>
        </nav>
        {/* Define css for this page or component */}
        {/* Note back ticks `` surrounding css are required */}
        <style jsx>{`
         nav {
-            max-width: 900px;
+            max-width: 100%;
+            text-align: center;
             background: #f0f0f0;
             border: 1px solid #ccc;
-            border-right: none;
+            border-top-left-radius:30px;
+            border-bottom-left-radius:30px;   
+            border-bottom-right-radius:30px;   
+            border-top-right-radius:30px;
+
+            margin-bottom: 25px;
+
         }
 
 

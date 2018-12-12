@@ -34,7 +34,6 @@ export default class SearchForm extends Component {
       <div>
         {/* Search Input */}
         <div id="search">
-          <h3>Enter newsapi.org source</h3>
           {/* Note event handler */}
           <form onSubmit={this.formSubmitted}>
             {/* The input field */}

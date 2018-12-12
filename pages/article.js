@@ -6,7 +6,7 @@ import {withRouter} from 'next/router'
 // Import fetch library
 import fetch from "isomorphic-unfetch";
 
-//(free version) API key from  https://newsapi.org/
+//(free version) API key from  https://newsapi.org/ 
 // Get your own key!
 const apiKey = "1ca5555189744b988820ce51c9b5f181";
 
@@ -56,30 +56,65 @@ class Article extends React.Component {
 
     return (
       <div>
+                <section>
+
         {/* Display a title based on source */}
-          <h3>{article.title}</h3>
-          <h3>{article.description}</h3>
-          <h3>{article.content}</h3>
+        <h3>{article.title}</h3>
+              <p className="author">{article.author} {article.publishedAt}</p>
+              <img src={article.urlToImage} alt="article image" className="img-article"></img>
+              <p>{article.description}</p>
+              <p>{article.content}</p>
+              <div className="markdown">
+        />
+    </div>
+
+              </section>
+
 ))
 
 
         <style jsx>{`
-          /* CSS for this page */
-          section {
-            width: 50%;
-            border: 1px solid gray;
-            background-color: rgb(240, 248, 255);
-            padding: 1em;
-            margin: 1em;
-          }
+           /* CSS for this page */
+           section {
+             max-width:1500;  
+             text-align: center;
+             border: 1px solid gray;
+             background-color: rgb(240, 248, 255);
+             padding: 1em;
+             margin: 1em;
+           }
 
-          .author {
-            font-style: italic;
-            font-size: 0.8em;
-          }
-          .img-article {
-            max-width: 50%;
-          }
+         .author {
+             font-style: italic;
+             font-size: 0.8em;
+           }
+         .img-article {
+             max-width: 50%;
+           }
+
+         .newsMenu {
+           display: flex;
+           flex-direction: row;
+           margin: 0;
+           padding: 0;
+           margin-top: 20px;
+         }
+         .newsMenu li {
+           display: inline-table;
+           padding-left: 20px;
+         }
+
+         .newsMenu li a {
+           font-size: 1em;
+           color: blue;
+           display: block;
+           text-decoration: none;
+         }
+
+         .newsMenu li a:hover {
+           color: rgb(255, 187, 0);
+           text-decoration: underline;
+         }
         `}</style>
       </div>
     );

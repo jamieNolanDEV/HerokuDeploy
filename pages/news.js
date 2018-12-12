@@ -95,6 +95,7 @@ export default class News extends React.Component {
 
         { /* Example search links - note using name attribute for parameters(!!) */}
         <ul className="newsMenu">
+
           <li><a href="#" onClick={this.searchNewsAPI} name="top-headlines?country=ie">Top Headlines Ireland</a></li>
           <li><a href="#" onClick={this.searchNewsAPI} name="top-headlines?country=ie&category=business">Business News Ireland</a></li>
           <li><a href="#" onClick={this.searchNewsAPI} name="everything?q=technology">Technology News</a></li>
@@ -117,13 +118,15 @@ export default class News extends React.Component {
               { /* adding the index value as a paramater to be passed with a request for the single article page*/}
               <p><Link as={`/article/${index}`} href={`/article?id=${index}`}><a>Read More</a></Link></p>
             </section>
+            
           ))}
         </div>
 
         <style jsx>{`
               /* CSS for this page */
               section {
-                width: 50%;
+                max-width:1500;  
+                text-align: center;
                 border: 1px solid gray;
                 background-color: rgb(240, 248, 255);
                 padding: 1em;
@@ -232,7 +235,7 @@ formatDate = (input) => {
   let month = months[date.getMonth()];
   let year = date.getFullYear();
   let hours = date.getHours();
-  let mins = date.getMinutes().toString().padStart(2,'0');
+  let mins = date.getMinutes();
   let secs = date.getSeconds();
  
   let output =  `${day} ${month} ${year} ${hours}:${mins} ${secs}s`;

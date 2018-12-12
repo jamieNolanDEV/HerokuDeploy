@@ -174,8 +174,8 @@ export default class News extends React.Component {
     // Build the url which will be used to get the data
     // See https://newsapi.org/s/the-irish-times-api
 
-    const defaultUrl = `https://newsapi.org/v2/everything?q=weather&from=2018-11-01&sortBy=publishedAt&apiKey=${apiKey}`;
-
+    //bugs not finding story with category
+    const defaultUrl = `https://newsapi.org/v2/top-headlines?q=weather&apiKey=${apiKey}`;
     // Get news data from the api url
     const data = await getNews(defaultUrl);
 
@@ -224,20 +224,20 @@ export default class News extends React.Component {
     }
   } // End componentDidUpdate
 
-formatDate = (input) => {
-  let date = new Date(input);
-  var week = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
-  var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October', 'November', 'December');
-  var day  = week[date.getDay()];
-  let month = months[date.getMonth()];
-  let year = date.getFullYear();
-  let hours = date.getHours();
-  let mins = date.getMinutes().toString().padStart(2,'0');
-  let secs = date.getSeconds();
- 
-  let output =  `${day} ${month} ${year} ${hours}:${mins} ${secs}s`;
-
- 
- return output.toString();
-}
-}
+  formatDate = (input) => {
+    let date = new Date(input);
+    var week = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+    var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October', 'November', 'December');
+    var day  = week[date.getDay()];
+    let month = months[date.getMonth()];
+    let year = date.getFullYear();
+    let hours = date.getHours();
+    let mins = date.getMinutes();
+    let secs = date.getSeconds();
+   
+    let output =  `${day} ${month} ${year} ${hours}:${mins} ${secs}s`;
+  
+   
+   return output.toString();
+  }
+  }

@@ -120,46 +120,47 @@ export default class News extends React.Component {
         </div>
 
         <style jsx>{`
-              /* CSS for this page */
-              section {
-                width: 50%;
-                border: 1px solid gray;
-                background-color: rgb(240, 248, 255);
-                padding: 1em;
-                margin: 1em;
-              }
-
-            .author {
-                font-style: italic;
-                font-size: 0.8em;
-              }
-            .img-article {
-                max-width: 50%;
-              }
-
-            .newsMenu {
-              display: flex;
-              flex-direction: row;
-              margin: 0;
-              padding: 0;
-              margin-top: 20px;
-            }
-            .newsMenu li {
-              display: inline-table;
-              padding-left: 20px;
-            }
-
-            .newsMenu li a {
-              font-size: 1em;
-              color: blue;
-              display: block;
-              text-decoration: none;
-            }
-
-            .newsMenu li a:hover {
-              color: rgb(255, 187, 0);
-              text-decoration: underline;
-            }
+                  /* CSS for this page */
+                  section {
+                    max-width:1500;  
+                    text-align: center;
+                    border: 1px solid gray;
+                    background-color: rgb(240, 248, 255);
+                    padding: 1em;
+                    margin: 1em;
+                  }
+    
+                .author {
+                    font-style: italic;
+                    font-size: 0.8em;
+                  }
+                .img-article {
+                    max-width: 50%;
+                  }
+    
+                .newsMenu {
+                  display: flex;
+                  flex-direction: row;
+                  margin: 0;
+                  padding: 0;
+                  margin-top: 20px;
+                }
+                .newsMenu li {
+                  display: inline-table;
+                  padding-left: 20px;
+                }
+    
+                .newsMenu li a {
+                  font-size: 1em;
+                  color: blue;
+                  display: block;
+                  text-decoration: none;
+                }
+    
+                .newsMenu li a:hover {
+                  color: rgb(255, 187, 0);
+                  text-decoration: underline;
+                }
           `}</style>
       </div>
     );
@@ -232,7 +233,7 @@ formatDate = (input) => {
   let month = months[date.getMonth()];
   let year = date.getFullYear();
   let hours = date.getHours();
-  let mins = date.getMinutes().toString().padStart(2,'0');
+  let mins = date.getMinutes();
   let secs = date.getSeconds();
  
   let output =  `${day} ${month} ${year} ${hours}:${mins} ${secs}s`;
