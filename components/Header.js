@@ -1,7 +1,8 @@
 const Header = () => (
     <div>
-        <h2 className="title">My News Site - Powered by NEWSAPI.ORG</h2>
-        <h2 className="title"></h2>
+        <h2 className="title">My News Site - <a href="www.newsapi.org">Powered by NEWSAPI.ORG</a></h2>
+       
+
 
         <style jsx>{`
 
